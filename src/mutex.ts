@@ -1,6 +1,6 @@
 import { Resolve } from "./types";
 
-export class Mutex<T> {
+export class Mutex {
   private mutex = Promise.resolve();
 
   private lock(): PromiseLike<() => void> {
@@ -13,7 +13,7 @@ export class Mutex<T> {
     });
   }
 
-  public async dispatch(fn: (() => T) | (()=> PromiseLike<T>)): Promise<T> {
+  public async dispatch<T>(fn: (() => T) | (()=> PromiseLike<T>)): Promise<T> {
     const unlock = await this.lock();
     try {
       return Promise.resolve(fn());
