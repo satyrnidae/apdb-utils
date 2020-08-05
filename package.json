@@ -1,0 +1,25 @@
+{
+  "name": "@satyrnidae/apdb-utils",
+  "version": "0.0.1",
+  "description": "Utility package for Another Pluggable Discord Bot",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/satyrnidae/apdb-utils.git"
+  },
+  "keywords": [
+    "utility",
+    "another",
+    "pluggable",
+    "discord",
+    "bot"
+  ],
+  "author": "Isabel Maskrey",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
