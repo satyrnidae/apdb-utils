@@ -6,6 +6,6 @@ module.exports = {
       production: "nps clean & tsc --declaration"
     },
     clean: "if exist .\\dist (rmdir /s /q .\\dist)",
-    publish: "nps build.production & npm publish"
+    publish: "nps build.production & npm publish --access public"
   }
 }
