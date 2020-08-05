@@ -1,6 +1,6 @@
 {
   "name": "@satyrnidae/apdb-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Utility package for Another Pluggable Discord Bot",
   "main": "dist/index.js",
   "scripts": {
