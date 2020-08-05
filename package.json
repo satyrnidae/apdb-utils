@@ -22,7 +22,8 @@
   "peerDependencies": {
     "check-dependencies": "^1.1.0",
     "typeorm": "^0.2.25",
-    "node": "^10.18.0"
+    "node": "^10.18.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
@@ -30,7 +31,8 @@
     "node": "^10.18.0",
     "nps": "^5.10.0",
     "typeorm": "^0.2.25",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "xmlhttprequest": "^1.8.0"
   },
   "dependencies": {}
 }
