@@ -1,8 +1,10 @@
+import { EntitySchema } from 'typeorm';
+
 export type EventHandlerFunction = (...args: any[]) => void;
 
 export type Reject = (reason?: any) => void;
 
-export type RepositoryTarget<T> = string | Function | (new () => T) | import('typeorm').EntitySchema<T>;
+export type RepositoryTarget<T> = string | Function | (new () => T) | EntitySchema<T>;
 
 export type Resolve<T> = (value?: T | PromiseLike<T>) => void;
 
