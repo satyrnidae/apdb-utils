@@ -18,10 +18,10 @@ export function toMany<T>(oneOrMany: OneOrMany<T>): T[] {
  */
 export function toOne<T>(oneOrMany: OneOrMany<T>): T | undefined {
   if (oneOrMany instanceof Array) {
-    if (oneOrMany.length === 1) {
+    if (oneOrMany.length >= 1) {
       return oneOrMany[0];
     }
-    return undefined;
+    return null;
   }
   return oneOrMany;
 }
@@ -32,4 +32,15 @@ export function toOne<T>(oneOrMany: OneOrMany<T>): T | undefined {
  */
 export function toOneOrMany<T>(array: T[]): OneOrMany<T> | null {
   return array.length === 0 ? null : array.length === 1 ? array[0] : array;
+}
+
+export function toOneOrFail<T>(oneOrMany: OneOrMany<T>): T {
+  if (oneOrMany instanceof Array) {
+    if (oneOrMany.length === 1) {
+      return oneOrMany[0];
+    }
+    throw new Error('More than one object was present in the array.')
+  }
+
+  return oneOrMany;
 }
