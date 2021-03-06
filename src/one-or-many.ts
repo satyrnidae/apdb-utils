@@ -8,7 +8,10 @@ export function toMany<T>(oneOrMany: OneOrMany<T>): T[] {
   if (oneOrMany instanceof Array) {
     return oneOrMany;
   }
-  return new Array(oneOrMany);
+  if (oneOrMany) {
+    return new Array(oneOrMany);
+  }
+  return [];
 }
 
 /**
@@ -42,5 +45,20 @@ export function toOneOrFail<T>(oneOrMany: OneOrMany<T>): T {
     throw new Error('More than one object was present in the array.')
   }
 
+  return oneOrMany;
+}
+
+/**
+ * Picks a single random object from a list, or just returns a single object.
+ * @param oneOrMany The list or single object to pick
+ */
+export function pickRandom<T>(oneOrMany: OneOrMany<T>): T {
+  if (oneOrMany instanceof Array) {
+    if (oneOrMany.length === 1) {
+      return oneOrMany[0];
+    }
+    const index: number = Math.floor(Math.random() * oneOrMany.length);
+    return oneOrMany[index];
+  }
   return oneOrMany;
 }
