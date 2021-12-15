@@ -1,3 +1,4 @@
+import { Abortable } from 'events';
 import * as fs from 'fs';
 import { Resolve, Reject } from './types';
 
@@ -7,9 +8,9 @@ type ReadDirOptions = {
 } | 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'latin1' | 'binary' | 'hex';
 
 type ReadFileOptions = {
-  encoding?: string;
+  encoding?: null;
   flag?: string
-};
+} & Abortable;
 
 type ReadResult = {
   read: number,
