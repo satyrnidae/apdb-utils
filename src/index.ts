@@ -8,3 +8,4 @@ export * from './fs-async';
 export * from './check-dependencies';
 export * from './web-async';
 export * from './sleep';
+export * from './query';
